@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.imperium.aluno.ImperiumRepository;
 import br.com.imperium.exception.ImperiumErrorException;
 import br.com.imperium.modelo.Aluno;
+import br.com.imperium.repository.ImperiumRepository;
 import br.com.imperium.util.PropriedadesUtil;
+
 
 @Controller
 @EnableAutoConfiguration
@@ -26,19 +27,19 @@ public class AlunoController {
 	@RequestMapping(method = RequestMethod.POST, consumes= "application/json", path = "/salvar")
 	public Aluno salvar(@RequestBody Aluno aluno) throws ImperiumErrorException {
 		
-		Aluno anoSalvo = null;
+		Aluno alunoSalvo = null;
 		
 		if (aluno != null) {
 			
-			aluno = this.repository.save(aluno);
+			alunoSalvo = this.repository.save(aluno);
 			
 		} else {
 			
-			//throw new ImperiumErrorException(PropriedadesUtil.getInstance().getPropriedade("error.entidade.nula"));
+			throw new ImperiumErrorException(PropriedadesUtil.getInstance().getPropriedade("error.entidade.nula"));
 			
 		}
 		
-		return anoSalvo;
+		return alunoSalvo;
 		
 	}
 

@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class PropriedadesUtil {
 	
-	/*private static PropriedadesUtil instance;
+	private static PropriedadesUtil instance;
 	
 	private static Properties prop = new Properties();
 	private static InputStream input = null;
@@ -41,6 +41,6 @@ public class PropriedadesUtil {
 		
 		return new PropriedadesUtil();
 		
-	}*/
+	}
 
 }

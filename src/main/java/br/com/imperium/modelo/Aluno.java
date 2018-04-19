@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Entidade que representa a tabela de aluno.
@@ -32,6 +33,7 @@ public class Aluno extends ImperiumEntidade {
 	@Column(name = "cpf")
 	private String cpf;
 	
+	@Transient
 	@Column(name = "idade")
 	private Integer idade;
 
